@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1713887541960,
+    "timestamp": "2024-04-23T15:52:21.960Z",
+    "answers": {
+      "use": "Vůbec nejezdím.",
+      "like": "5",
+      "type": "Sportovní",
+      "roleModel": "Ducati",
+      "obsah": "1000"
+    }
+  },
+  {
+    "id": 1713887565796,
+    "timestamp": "2024-04-23T15:52:45.796Z",
+    "answers": {
+      "use": "1-10 kilometrů",
+      "like": "4",
+      "type": "Chopper",
+      "roleModel": "KTM",
+      "obsah": "300"
+    }
+  },
+  {
+    "id": 1713887589915,
+    "timestamp": "2024-04-23T15:53:09.915Z",
+    "answers": {
+      "use": "více jak 100 kilometrů",
+      "like": "5",
+      "type": "Cestovní",
+      "roleModel": "Honda",
+      "obsah": "800"
+    }
+  }
+]

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webová anketa</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <style>
+    </style>
+</head>
+<body>
+    <h2>Dotazník o motorkách</h2>
+    <form action="/submit" method="post" class="form-container" id="anketaForm"> 
+        <div>
+            <label for="use" class="bold">Kolik kilometrů na motorce najezdáte za týden?</label>
+            <select id="use" name="use" required>
+                <option value="">Vyberte..</option> 
+                <option value="Vůbec nejezdím.">Vůbec nejezdím.</option>
+                <option value="1-10 kilometrů">1-10 kilometrů</option>
+                <option value="10-100 kilometrů">10-100 kilometrů</option>
+                <option value="více jak 100 kilometrů">více jak 100 kilometrů</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="like" class="bold">Ohodnoťte vaši zálibu v motorkách (1 = vůbec mě neberou, 5 = miluji je).</label>
+            <input type="number" step="1" min="1" max="5" id="like" name="like" required> 
+        </div>
+
+        <div>
+            <label class="bold">Který druh motorky preferujete?</label>
+            <select id="type" name="type" required> 
+                <option value="">Vyberte..</option>
+                <option value="Naked">Naked</option>
+                <option value="Sportovní">Sportovní</option>
+                <option value="Cestovní">Cestovní</option>
+                <option value="Chopper">Chopper</option>
+                <option value="Chopper">Cross</option>
+            </select>
+        </div>
+        
+        <div>
+            <label for="roleModel" class="bold">Která značka motorky je vaše oblíbená?</label>
+            <select id="roleModel" name="roleModel" required> 
+                <option value="">Vyberte...</option> 
+                <option value="Honda">Honda</option>
+                <option value="Yamaha">Yamaha</option>
+                <option value="Kawasaki">Kawasaki</option>
+                <option value="Suzuki">Suzuki</option>
+                <option value="Ducati">Ducati</option>
+                <option value="Harley-Davidson">Harley-Davidson</option>
+                <option value="BMW">BMW</option>
+                <option value="KTM">KTM</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="obsah" class="bold">Napište jaký máte/chtěli byste mít obsah motorky v ccm.</label>
+            <input type="text" id="obsah" name="obsah" required> 
+        </div>
+
+        <button type="submit" class="submit-btn">Odeslat odpovědi</button>
+    </form>
+
+    <script>
+       
+        document.getElementById('anketaForm').addEventListener('submit', function(event) { 
+            const inputs = document.querySelectorAll('input, select'); 
+            let isValid = true; 
+
+            inputs.forEach(function(input) {
+                if (!input.value) { 
+                    isValid = false;
+                    input.classList.add('invalid');
+                } else { 
+                    input.classList.remove('invalid');
+                }
+            });
+
+            if (!isValid) { 
+                event.preventDefault(); 
+                alert('Prosím vyplňte všechny povinné položky.');
+            }
+        });
+    </script>
+</body>
+</html>

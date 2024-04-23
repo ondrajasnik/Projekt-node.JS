@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Výsledky dotazníku o motorkách</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h2>Výsledky dotazníku o motorkách</h2>
+    <div class="container">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Datum</th>
+                <th>Kilometry týdně</th>
+                <th>Záliba v motorkách</th>
+                <th>Preferovaný typ motorky</th>
+                <th>Oblíbená značka motorky</th>
+                <th>Obsah motoru (ccm)</th>
+            </tr>
+            <% responses.forEach(function(response) { 
+                const date = new Date(response.timestamp);
+                const dateString = `${('0' + date.getDate()).slice(-2)}.${('0' + (date.getMonth() + 1)).slice(-2)}.${date.getFullYear()}`;
+                const timeString = `${('0' + date.getHours()).slice(-2)}:${('0' + date.getMinutes()).slice(-2)}:${('0' + date.getSeconds()).slice(-2)}`;
+            %>
+                <tr>
+                    <td><%= response.id %></td>
+                    <td><%= dateString %></td>
+                    <td><%= response.answers.use %></td>
+                    <td><%= response.answers.like %></td>
+                    <td><%= response.answers.type %></td>
+                    <td><%= response.answers.roleModel %></td>
+                    <td><%= response.answers.obsah %></td>
+                </tr>
+            <% }); %>
+        </table>
+    </div>
+</body>
+</html>
